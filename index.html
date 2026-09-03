@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KO|Apps - Açılış Sayfası</title>
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+  
+  <!-- PWA & Mobil Manifest -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#040914">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <!-- CSS Dosyaları -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/widgets.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body data-theme="ankaragucu">
+
+  <!-- Arka Plan Katmanları -->
+  <div class="background-layer" id="backgroundLayer"></div>
+  <div class="ambient-glow-layer"></div>
+
+  <!-- Ana Uygulama Kapsayıcısı -->
+  <div class="app-container">
+
+    <!-- ==========================================
+         1. ÜST BAŞLIK BARI (HEADER)
+         ========================================== -->
+    <header class="header-bar">
+      <!-- Sol: Marka & Saat -->
+      <div class="header-left">
+        <a href="#" class="brand-badge" title="KO|Apps - Açılış Sayfası">
+          <img src="icons/ankaragucu-logo.png" style="width:34px;height:34px;object-fit:contain;" alt="MKE Ankaragücü">
+          <div class="brand-title">
+            <span class="brand-name">KO|Apps</span>
+            <span class="brand-tagline">Açılış Sayfası</span>
+          </div>
+        </a>
+
+        <div class="header-clock-section">
+          <div class="clock-display" id="headerClock">12:00:00</div>
+          <div class="date-greeting-display">
+            <span class="greeting-text" id="headerGreeting">İyi Günler, Başkentli! 💛💙</span>
+            <span class="date-text" id="headerDate">Yükleniyor...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orta: Canlı Finans & Piyasa Ticker -->
+      <div class="header-center">
+        <div class="live-ticker-strip" id="liveTickerStrip">
+          <div class="ticker-item"><span class="ticker-label">USD/TRY:</span> <span class="ticker-value">34.12 ₺</span></div>
+          <div class="ticker-item"><span class="ticker-label">EUR/TRY:</span> <span class="ticker-value">37.85 ₺</span></div>
+          <div class="ticker-item"><span class="ticker-label">Gram Altın:</span> <span class="ticker-value">2.840 ₺</span></div>
+          <div class="ticker-item"><span class="ticker-label">BIST 100:</span> <span class="ticker-value">10.150</span></div>
+          <div class="ticker-item"><span class="ticker-label">BTC:</span> <span class="ticker-value">$64.500</span></div>
+        </div>
+      </div>
+
+      <!-- Sağ: Hızlı Aksiyonlar -->
+      <div class="header-right">
+        <div class="header-btn" id="headerMiniWeather" style="cursor:default;font-weight:700;">
+          ☀️ 24°C Ankara
+        </div>
+        <button class="header-btn" id="openSettingsBtn" title="Ayarlar ve Kişiselleştirme">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          <span>Ayarlar</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ==========================================
+         2. HERO ARAMA KUTUSU & MOTOR SEÇİCİ
+         ========================================== -->
+    <section class="hero-search-section">
+      <form class="search-box-wrapper" id="searchForm">
+        <!-- Motor Seçim Butonu -->
+        <div class="search-engine-selector">
+          <button type="button" class="engine-current-btn" id="engineCurrentBtn">
+            <img src="icons/favicon.svg" class="engine-current-icon" alt="">
+            <span>Brave</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <!-- Açılır Menü -->
+          <div class="engine-dropdown-menu" id="engineDropdownMenu"></div>
+        </div>
+
+        <!-- Arama Inputu -->
+        <input type="text" class="search-input" id="heroSearchInput" placeholder="Brave ile internette ara... (/ tuşuyla odaklan)" autocomplete="off" autofocus>
+
+        <!-- Temizle & Ara Butonları -->
+        <div class="search-actions">
+          <button type="button" class="search-clear-btn" id="searchClearBtn" title="Temizle">✕</button>
+          <button type="submit" class="search-submit-btn" title="Ara">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+        </div>
+      </form>
+
+      <!-- Hızlı Arama Motoru Rozetleri -->
+      <div class="search-quick-engines">
+        <button type="button" class="quick-engine-pill active" data-engine="brave">🦁 Brave</button>
+        <button type="button" class="quick-engine-pill" data-engine="google">🔍 Google</button>
+        <button type="button" class="quick-engine-pill" data-engine="duckduckgo">🦆 DuckDuckGo</button>
+        <button type="button" class="quick-engine-pill" data-engine="youtube">▶️ YouTube</button>
+        <button type="button" class="quick-engine-pill" data-engine="yandex">🔴 Yandex</button>
+        <button type="button" class="quick-engine-pill" data-engine="github">🐙 GitHub</button>
+        <button type="button" class="quick-engine-pill" data-engine="wikipedia">📚 Vikipedi</button>
+        <button type="button" class="quick-engine-pill" data-engine="eksisozluk">🟢 Ekşi Sözlük</button>
+      </div>
+    </section>
+
+    <!-- Mobil Widget Dock (Dokunmatik Telefon İkonları Barı) -->
+    <nav class="mobile-widget-dock" id="mobileWidgetDock" aria-label="Mobil Hızlı Widget Erişimi">
+      <button type="button" class="mobile-dock-btn mobile-dock-ag" id="mobileDockAgBtn" title="Ankaragücü Detayları">
+        <div class="mobile-dock-icon">
+          <img src="icons/ankaragucu-logo.png" alt="Ankaragücü">
+        </div>
+        <span class="mobile-dock-label">Ankaragücü</span>
+      </button>
+
+      <button type="button" class="mobile-dock-btn" id="mobileDockStandingsBtn" title="Lig Puan Tablosu">
+        <div class="mobile-dock-icon" style="font-size:1.25rem;">🏆</div>
+        <span class="mobile-dock-label">Puan</span>
+      </button>
+
+      <button type="button" class="mobile-dock-btn" id="mobileDockWeatherBtn" title="Canlı Hava Durumu">
+        <div class="mobile-dock-icon" style="font-size:1.25rem;">⛅</div>
+        <span class="mobile-dock-label">Hava</span>
+      </button>
+
+      <button type="button" class="mobile-dock-btn" id="mobileDockFinanceBtn" title="Canlı Borsa & Kripto">
+        <div class="mobile-dock-icon" style="font-size:1.25rem;">📈</div>
+        <span class="mobile-dock-label">Borsa</span>
+      </button>
+
+      <button type="button" class="mobile-dock-btn" id="mobileDockShortcutsBtn" title="Hızlı Kısayollar">
+        <div class="mobile-dock-icon" style="font-size:1.25rem;">⚡</div>
+        <span class="mobile-dock-label">Kısayol</span>
+      </button>
+
+      <button type="button" class="mobile-dock-btn" id="mobileDockTodosBtn" title="Not Defteri & Görevler">
+        <div class="mobile-dock-icon" style="font-size:1.25rem;">📝</div>
+        <span class="mobile-dock-label">Notlar</span>
+      </button>
+    </nav>
+
+    <!-- ==========================================
+         3. 3 SÜTUNLU ANA GÖSTERGE PANELİ (GRID)
+         ========================================== -->
+    <main class="dashboard-grid">
+
+      <!-- SOL SÜTUN: Ankaragücü & Canlı Hava Durumu -->
+      <aside class="dashboard-column left-column">
+        <!-- 💛💙 MKE Ankaragücü Özel Widget'ı -->
+        <div class="widget-card ankaragucu-card" id="ankaragucuWidget"></div>
+
+        <!-- ☀️ Canlı Hava Durumu Widget'ı -->
+        <div class="widget-card" id="weatherWidget"></div>
+      </aside>
+
+      <!-- ORTA SÜTUN: Kategorize RSS Haber Merkezi -->
+      <section class="dashboard-column center-column">
+        <div class="news-feed-container">
+          
+          <!-- Kategori Sekmeleri -->
+          <div class="feed-categories-bar" id="feedCategoriesBar"></div>
+
+          <!-- Feed Araç Çubuğu -->
+          <div class="feed-toolbar">
+            <div class="feed-search-box">
+              <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="feedSearchInput" placeholder="Haberler içinde ara...">
+            </div>
+
+            <div class="feed-toolbar-actions">
+              <button class="btn-rss-action btn-primary-action" id="addRssModalBtn" title="Yeni RSS Kaynağı Ekle">
+                <span>➕ RSS Ekle</span>
+              </button>
+              <button class="btn-rss-action" id="refreshFeedBtn" title="Haberleri Yenile">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                <span>Yenile</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Haber Kartları Grid -->
+          <div class="news-cards-grid" id="newsCardsGrid">
+            <!-- Dinamik haber kartları js/rss.js tarafından doldurulur -->
+            <div class="feed-loading-state" style="grid-column: 1 / -1;">
+              <div class="spinner"></div>
+              <span>Haber kaynakları yükleniyor...</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SAĞ SÜTUN: Kısayollar (Haber7, Hürriyet vb.) & Notlar -->
+      <aside class="dashboard-column right-column">
+        
+        <!-- ⚡ Hızlı Erişim & Kısayollar Widget'ı -->
+        <div class="widget-card" id="shortcutsWidgetCard">
+          <div class="widget-header">
+            <div class="widget-title-group">
+              <div class="widget-icon">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <span class="widget-title">Hızlı Erişim Kısayolları</span>
+            </div>
+          </div>
+          <!-- Kısayol Kutucukları Grid -->
+          <div class="shortcuts-grid" id="shortcutsGrid"></div>
+        </div>
+
+        <!-- 📝 Yapılacaklar & Notlar Widget'ı -->
+        <div class="widget-card" id="todosWidget"></div>
+
+      </aside>
+
+    </main>
+
+  </div>
+
+  <!-- ==========================================
+       4. DİYALOGLAR VE MODALLAR
+       ========================================== -->
+
+  <!-- Modal 1: ➕ Yeni RSS Kaynağı Ekle -->
+  <div class="modal-backdrop" id="addRssModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-title-icon">➕</div>
+          <span class="modal-title">Yeni RSS Kaynağı Ekle</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <form id="addRssForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">RSS Besleme URL'si *</label>
+            <input type="url" class="form-input" id="rssUrlInput" placeholder="https://ornek.com/rss.xml" required>
+            <span class="form-hint">Standart RSS 2.0 veya Atom formatında besleme linki</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kaynak Başlığı (İsteğe Bağlı)</label>
+            <input type="text" class="form-input" id="rssTitleInput" placeholder="Örn: Anadolu Ajansı">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kategori Seçin</label>
+            <select class="form-select" id="rssCategorySelect">
+              <option value="Gündem">Gündem</option>
+              <option value="Teknoloji">Teknoloji</option>
+              <option value="Ekonomi">Ekonomi</option>
+              <option value="Spor">Spor</option>
+              <option value="Bilim & Dünya">Bilim & Dünya</option>
+              <option value="Özel Kaynaklar">Özel Kaynaklar</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="modal-btn modal-btn-secondary" data-close-modal>İptal</button>
+          <button type="submit" class="modal-btn modal-btn-primary">Kaynağı Ekle</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 2: ➕ Yeni Kısayol Ekle (Haber7, Hürriyet vb.) -->
+  <div class="modal-backdrop" id="addShortcutModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-title-icon">⚡</div>
+          <span class="modal-title">Yeni Kısayol Ekle</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <form id="addShortcutForm">
+        <div class="modal-body">
+          <!-- Popüler Hızlı Öneriler -->
+          <div class="form-group">
+            <label class="form-label">Hızlı Öneriler (Tek Tıkla Seçin)</label>
+            <div class="preset-chips-list" id="shortcutPresetsList"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Site Adı *</label>
+            <input type="text" class="form-input" id="shortcutTitleInput" placeholder="Örn: Haber7" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Web Sitesi Adresi (URL) *</label>
+            <input type="text" class="form-input" id="shortcutUrlInput" placeholder="https://www.haber7.com" required>
+          </div>
+
+          <!-- Favicon Önizleme -->
+          <div style="display:flex;align-items:center;gap:10px;">
+            <img id="shortcutFaviconPreview" src="" style="width:32px;height:32px;border-radius:6px;display:none;" alt="Favicon">
+            <span class="form-hint">Favicon ve logo otomatik olarak algılanacaktır.</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="modal-btn modal-btn-secondary" data-close-modal>Vazgeç</button>
+          <button type="submit" class="modal-btn modal-btn-primary">Kısayolu Ekle</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 3: 📰 Hızlı Haber Okuma (Reader Mode) -->
+  <div class="modal-backdrop" id="readerModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-title-icon">📰</div>
+          <span class="modal-title">Hızlı Haber Önizleme</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <div class="modal-body reader-modal-body">
+        <div id="readerImgContainer"></div>
+        <h2 class="reader-headline" id="readerTitle"></h2>
+        <div class="reader-meta-bar" id="readerMeta"></div>
+        <div class="reader-content-text" id="readerContent"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="modal-btn modal-btn-secondary" data-close-modal>Kapat</button>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-primary" id="readerDirectLink" style="text-decoration:none;">
+          Orijinal Habere Git ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: ⚙️ Ayarlar & Kişiselleştirme -->
+  <div class="modal-backdrop" id="settingsModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-title-icon">⚙️</div>
+          <span class="modal-title">KO|Apps Ayarları</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+
+      <!-- Ayarlar Sekmeleri -->
+      <div class="settings-tabs-header">
+        <button type="button" class="settings-tab-btn active" data-target-tab="tabThemes">🎨 Temalar & Görünüm</button>
+        <button type="button" class="settings-tab-btn" data-target-tab="tabRssManage">📰 RSS Kaynakları</button>
+        <button type="button" class="settings-tab-btn" data-target-tab="tabBackup">💾 Yedekle & Geri Yükle</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Sekme 1: Temalar & Duvar Kağıdı -->
+        <div class="settings-tab-pane active" id="tabThemes">
+          <div class="form-group">
+            <label class="form-label">Tema Seçimi</label>
+            <div class="theme-options-grid" id="themeOptionsGrid"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Hazır Duvar Kağıtları</label>
+            <div class="preset-chips-list" id="wallpaperPresets"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Özel Duvar Kağıdı Görsel URL'si</label>
+            <input type="url" class="form-input" id="customWallpaperUrl" placeholder="https://images.unsplash.com/...">
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div class="form-group">
+              <label class="form-label">Bulanıklık (Blur):</label>
+              <input type="range" min="0" max="25" class="form-input" id="wallpaperBlurSlider" style="padding:4px;">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Görsel Belirginliği (Opaklık):</label>
+              <input type="range" min="10" max="100" class="form-input" id="wallpaperOpacitySlider" style="padding:4px;">
+            </div>
+          </div>
+
+          <!-- Sayfa Boyutu / Zoom Ölçeği -->
+          <div class="form-group" style="margin-top: 8px;">
+            <label class="form-label">🔍 Sayfa Boyutu & Zoom Ölçeği (Ekran Uyumu)</label>
+            <div class="preset-chips-list" id="zoomPresetList">
+              <button type="button" class="preset-chip-btn" data-zoom="1.0"><span>%100 (Standart)</span></button>
+              <button type="button" class="preset-chip-btn" data-zoom="1.15"><span>%115 (Geniş)</span></button>
+              <button type="button" class="preset-chip-btn" data-zoom="1.25"><span>%125 (Önerilen)</span></button>
+              <button type="button" class="preset-chip-btn active" data-zoom="1.30"><span>%130 (Büyük / Tam Sığan)</span></button>
+              <button type="button" class="preset-chip-btn" data-zoom="1.40"><span>%140 (Ekstra Büyük)</span></button>
+            </div>
+            <span class="form-hint">Sayfa ekranınıza tam oturacak şekilde %130 ölçeğinde ayarlanmıştır. Dilediğiniz boyutu seçebilirsiniz.</span>
+          </div>
+        </div>
+
+        <!-- Sekme 2: RSS Yönetimi -->
+        <div class="settings-tab-pane" id="tabRssManage">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span class="form-label">Kayıtlı RSS Beslemeleri</span>
+          </div>
+          <div class="rss-manage-list" id="settingsRssList"></div>
+        </div>
+
+        <!-- Sekme 3: Yedekleme -->
+        <div class="settings-tab-pane" id="tabBackup">
+          <div class="form-group">
+            <label class="form-label">Yapılandırmayı Yedekle</label>
+            <p class="form-hint" style="margin-bottom:8px;">Tüm kısayollarınızı, eklediğiniz özel RSS kaynaklarını, yapılacakları ve temalarınızı JSON formatında indirebilirsiniz.</p>
+            <button type="button" class="modal-btn modal-btn-secondary" id="exportBackupBtn">
+              📥 Yedek Dosyasını İndir (.json)
+            </button>
+          </div>
+
+          <hr style="border:0;border-top:1px solid var(--border-subtle);margin:10px 0;">
+
+          <div class="form-group">
+            <label class="form-label">Yedeği Geri Yükle</label>
+            <p class="form-hint" style="margin-bottom:8px;">Daha önce aldığınız JSON yedek dosyasını yükleyerek tüm verilerinizi anında geri getirin.</p>
+            <input type="file" id="importBackupInput" accept=".json" class="form-input">
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="modal-btn modal-btn-primary" data-close-modal>Tamam</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: 🏆 Puan Durumu & Lig Tablosu (Popup) -->
+  <div class="modal-backdrop" id="standingsModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <img src="icons/ankaragucu-logo.png" style="width:28px;height:28px;object-fit:contain;" alt="MKE Ankaragücü">
+          <span class="modal-title" id="standingsLeagueTitle">Nesine 2. Lig Kırmızı Grup (2026-2027)</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      
+      <div class="modal-body" style="gap:12px;">
+        <!-- Lig Seçim Sekmeleri -->
+        <div class="standings-tabs">
+          <button type="button" class="standings-tab-btn active" data-league="2lig">
+            🟡🔵 Nesine 2. Lig (Ankaragücü)
+          </button>
+          <button type="button" class="standings-tab-btn" data-league="1lig">
+            ⚽ Trendyol 1. Lig
+          </button>
+          <button type="button" class="standings-tab-btn" data-league="superlig">
+            🏆 Trendyol Süper Lig
+          </button>
+        </div>
+
+        <!-- Puan Tablosu -->
+        <div class="standings-table-wrap">
+          <table class="standings-table">
+            <thead>
+              <tr>
+                <th style="width:38px;text-align:center;">#</th>
+                <th>Takım</th>
+                <th style="width:36px;text-align:center;">O</th>
+                <th style="width:36px;text-align:center;">G</th>
+                <th style="width:36px;text-align:center;">B</th>
+                <th style="width:36px;text-align:center;">M</th>
+                <th style="width:36px;text-align:center;">AG</th>
+                <th style="width:36px;text-align:center;">YG</th>
+                <th style="width:38px;text-align:center;">AV</th>
+                <th style="width:42px;text-align:center;">P</th>
+                <th style="width:110px;text-align:center;">Son 5</th>
+              </tr>
+            </thead>
+            <tbody id="standingsTableBody">
+              <!-- JS ile dinamik olarak doldurulur -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Açıklama / Legend -->
+        <div class="standings-legend" id="standingsLegend">
+          <div class="legend-item">
+            <span class="legend-dot" style="background:#10B981;"></span>
+            <span>1: Doğrudan 1. Lig'e Yükselme</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot" style="background:#00D2FF;"></span>
+            <span>2-6: Play-Off Hattı</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot" style="background:#EF4444;"></span>
+            <span>16-18: Düşme Hattı</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="modal-btn modal-btn-secondary" data-close-modal>Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       5. MOBİL BOTTOM-SHEET POPUPLAR
+       ========================================== -->
+
+  <!-- Mobil Sheet 1: 🟡 MKE Ankaragücü -->
+  <div class="mobile-sheet-backdrop" id="mobileAgSheet">
+    <div class="mobile-sheet-dialog">
+      <div class="mobile-sheet-handle"></div>
+      <div class="mobile-sheet-header">
+        <div class="mobile-sheet-title-group">
+          <img src="icons/ankaragucu-logo.png" style="width:24px;height:24px;object-fit:contain;" alt="">
+          <span>MKE Ankaragücü (1910)</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <div class="mobile-sheet-body" id="mobileAgSheetBody">
+        <!-- JS ile dinamik olarak klonlanır/doldurulur -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobil Sheet 2: ⛅ Canlı Hava Durumu -->
+  <div class="mobile-sheet-backdrop" id="mobileWeatherSheet">
+    <div class="mobile-sheet-dialog">
+      <div class="mobile-sheet-handle"></div>
+      <div class="mobile-sheet-header">
+        <div class="mobile-sheet-title-group">
+          <span>⛅ Ankara Hava Durumu</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <div class="mobile-sheet-body" id="mobileWeatherSheetBody">
+        <!-- JS ile dinamik olarak doldurulur -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobil Sheet 3: 📈 Canlı Finans & Kripto -->
+  <div class="mobile-sheet-backdrop" id="mobileFinanceSheet">
+    <div class="mobile-sheet-dialog">
+      <div class="mobile-sheet-handle"></div>
+      <div class="mobile-sheet-header">
+        <div class="mobile-sheet-title-group">
+          <span>📈 Canlı Piyasalar & Kripto</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <div class="mobile-sheet-body" id="mobileFinanceSheetBody">
+        <!-- JS ile dinamik olarak doldurulur -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobil Sheet 4: ⚡ Hızlı Kısayollar -->
+  <div class="mobile-sheet-backdrop" id="mobileShortcutsSheet">
+    <div class="mobile-sheet-dialog">
+      <div class="mobile-sheet-handle"></div>
+      <div class="mobile-sheet-header">
+        <div class="mobile-sheet-title-group">
+          <span>⚡ Hızlı Erişim Kısayolları</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <div class="mobile-sheet-body" id="mobileShortcutsSheetBody">
+        <!-- JS ile dinamik olarak doldurulur -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobil Sheet 5: 📝 Yapılacaklar & Notlar -->
+  <div class="mobile-sheet-backdrop" id="mobileTodosSheet">
+    <div class="mobile-sheet-dialog">
+      <div class="mobile-sheet-handle"></div>
+      <div class="mobile-sheet-header">
+        <div class="mobile-sheet-title-group">
+          <span>📝 Notlar & Görevler</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal>✕</button>
+      </div>
+      <div class="mobile-sheet-body" id="mobileTodosSheetBody">
+        <!-- JS ile dinamik olarak doldurulur -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Giriş Noktası -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

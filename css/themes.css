@@ -1,0 +1,161 @@
+/* ==========================================================================
+   AuraTab Başkent - Temalar & Görsel Efektler (Themes CSS)
+   ========================================================================== */
+
+/* 1. Ankaragücü 1910 Sarı-Lacivert Teması (Varsayılan) */
+body[data-theme="ankaragucu"] {
+  --bg-primary: #020817;
+  --bg-secondary: #001A3A;
+  --bg-card: rgba(0, 26, 58, 0.65);
+  --bg-card-hover: rgba(0, 38, 85, 0.85);
+  --bg-input: rgba(0, 15, 36, 0.8);
+  --bg-modal: rgba(2, 14, 34, 0.96);
+  
+  --border-card: rgba(255, 204, 0, 0.22);
+  --border-card-hover: rgba(255, 204, 0, 0.55);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  
+  --color-primary: #FFCC00;
+  --color-primary-light: #FFE580;
+  --color-primary-dark: #CCA300;
+  --color-secondary: #002D62;
+  --color-accent: #00D2FF;
+  
+  --text-primary: #FFFFFF;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-accent: #FFCC00;
+  
+  --shadow-glow: 0 0 30px rgba(255, 204, 0, 0.3);
+}
+
+/* 2. Gecekondu Karanlığı (Midnight Ultra Dark) */
+body[data-theme="gecekondu"] {
+  --bg-primary: #07090E;
+  --bg-secondary: #0E121B;
+  --bg-card: rgba(15, 20, 30, 0.7);
+  --bg-card-hover: rgba(24, 32, 48, 0.88);
+  --bg-input: rgba(10, 13, 20, 0.85);
+  --bg-modal: rgba(10, 14, 22, 0.97);
+  
+  --border-card: rgba(255, 204, 0, 0.14);
+  --border-card-hover: rgba(255, 204, 0, 0.4);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  
+  --color-primary: #F59E0B;
+  --color-primary-light: #FBBF24;
+  --color-primary-dark: #D97706;
+  --color-secondary: #1E293B;
+  --color-accent: #38BDF8;
+  
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  
+  --shadow-glow: 0 0 25px rgba(245, 158, 11, 0.2);
+}
+
+/* 3. Cyberpunk Neon */
+body[data-theme="cyberpunk"] {
+  --bg-primary: #0A0216;
+  --bg-secondary: #15062C;
+  --bg-card: rgba(26, 8, 54, 0.65);
+  --bg-card-hover: rgba(42, 14, 86, 0.85);
+  --bg-input: rgba(18, 4, 38, 0.8);
+  --bg-modal: rgba(16, 4, 34, 0.96);
+  
+  --border-card: rgba(0, 240, 255, 0.25);
+  --border-card-hover: rgba(255, 0, 128, 0.6);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  
+  --color-primary: #00F0FF;
+  --color-primary-light: #80F7FF;
+  --color-primary-dark: #00B8C4;
+  --color-secondary: #FF007F;
+  --color-accent: #FFE600;
+  
+  --text-primary: #FFFFFF;
+  --text-secondary: #E2E8F0;
+  --text-muted: #A78BFA;
+  
+  --shadow-glow: 0 0 30px rgba(0, 240, 255, 0.35);
+}
+
+/* 4. Aurora Glass (Emerald & Deep Teal) */
+body[data-theme="aurora"] {
+  --bg-primary: #031412;
+  --bg-secondary: #062824;
+  --bg-card: rgba(7, 43, 39, 0.65);
+  --bg-card-hover: rgba(11, 64, 58, 0.85);
+  --bg-input: rgba(4, 25, 22, 0.8);
+  --bg-modal: rgba(5, 30, 27, 0.96);
+  
+  --border-card: rgba(16, 185, 129, 0.25);
+  --border-card-hover: rgba(52, 211, 153, 0.6);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  
+  --color-primary: #10B981;
+  --color-primary-light: #6EE7B7;
+  --color-primary-dark: #059669;
+  --color-secondary: #047857;
+  --color-accent: #38BDF8;
+  
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCFBF1;
+  --text-muted: #6EE7B7;
+  
+  --shadow-glow: 0 0 30px rgba(16, 185, 129, 0.3);
+}
+
+/* 5. Minimalist OLED (Pure Black) */
+body[data-theme="oled"] {
+  --bg-primary: #000000;
+  --bg-secondary: #0A0A0A;
+  --bg-card: rgba(16, 16, 16, 0.75);
+  --bg-card-hover: rgba(26, 26, 26, 0.9);
+  --bg-input: rgba(12, 12, 12, 0.9);
+  --bg-modal: rgba(10, 10, 10, 0.98);
+  
+  --border-card: rgba(255, 255, 255, 0.12);
+  --border-card-hover: rgba(255, 255, 255, 0.35);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  
+  --color-primary: #FFFFFF;
+  --color-primary-light: #E2E8F0;
+  --color-primary-dark: #94A3B8;
+  --color-secondary: #27272A;
+  --color-accent: #38BDF8;
+  
+  --text-primary: #FFFFFF;
+  --text-secondary: #D4D4D8;
+  --text-muted: #71717A;
+  
+  --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+/* 6. Clean Light Mode */
+body[data-theme="light"] {
+  --bg-primary: #F1F5F9;
+  --bg-secondary: #E2E8F0;
+  --bg-card: rgba(255, 255, 255, 0.82);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --bg-input: rgba(241, 245, 249, 0.9);
+  --bg-modal: rgba(255, 255, 255, 0.98);
+  
+  --border-card: rgba(0, 45, 98, 0.15);
+  --border-card-hover: rgba(0, 45, 98, 0.35);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  
+  --color-primary: #002D62;
+  --color-primary-light: #0A4FA8;
+  --color-primary-dark: #001B3A;
+  --color-secondary: #FFCC00;
+  --color-accent: #0284C7;
+  
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 25px rgba(0, 45, 98, 0.15);
+}

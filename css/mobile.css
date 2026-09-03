@@ -1,0 +1,356 @@
+/* ==========================================================================
+   KO|Apps - Mobil & Dokunmatik Ekran Stilleri (Brave Mobile CSS)
+   ========================================================================== */
+
+/* Mobil Widget Dock: Masaüstünde gizlenir, mobilde görünür */
+.mobile-widget-dock {
+  display: none;
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   Mobil Ekranlar: @media (max-width: 900px)
+   ========================================================================== */
+@media (max-width: 900px) {
+  
+  /* Sayfa Temel Boyutlandırması */
+  .app-container {
+    padding: 12px 14px 28px;
+    gap: 14px;
+    zoom: 1.0 !important; /* Mobilde yerel dokunmatik ölçek */
+  }
+
+  /* 1. Sadeleştirilmiş Mobil Header */
+  .header-bar {
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .header-left {
+    gap: 10px;
+  }
+
+  .brand-badge img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  .brand-tagline {
+    display: none; /* Mobilde sade görünüm için gizle */
+  }
+
+  .header-clock-section {
+    padding-left: 8px;
+  }
+
+  .clock-display {
+    font-size: 1.05rem;
+  }
+
+  .date-greeting-display {
+    display: none;
+  }
+
+  .header-center {
+    display: none; /* Mobilde üst ticker gizlenir, widget dock içine alınır */
+  }
+
+  .header-right {
+    gap: 6px;
+  }
+
+  #headerMiniWeather {
+    display: none;
+  }
+
+  #openSettingsBtn span {
+    display: none; /* Sadece dişli çark ikonu kalsın */
+  }
+
+  #openSettingsBtn {
+    padding: 8px;
+    border-radius: 50%;
+  }
+
+  /* 2. Kompakt Mobil Arama Çubuğu */
+  .hero-search-section {
+    margin-bottom: 8px;
+  }
+
+  .search-box-wrapper {
+    padding: 5px 8px;
+    border-radius: var(--radius-pill);
+  }
+
+  .search-input {
+    font-size: 0.92rem;
+    padding: 8px 6px;
+  }
+
+  .engine-current-btn {
+    padding: 6px 8px;
+    font-size: 0.76rem;
+  }
+
+  .engine-current-btn span {
+    display: none; /* Mobilde arama çubuğunda motor adı yerine sadece logo kalsın */
+  }
+
+  .search-quick-engines {
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .search-quick-engines::-webkit-scrollbar {
+    display: none;
+  }
+
+  .quick-engine-pill {
+    padding: 5px 10px;
+    font-size: 0.72rem;
+    flex-shrink: 0;
+  }
+
+  /* 3. Mobil Widget Dock (İkonlar Barı) */
+  .mobile-widget-dock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 6px 2px 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .mobile-widget-dock::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-dock-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 64px;
+    padding: 8px 6px;
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-card);
+    border-radius: 14px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s;
+  }
+
+  .mobile-dock-btn:active {
+    transform: scale(0.92);
+    border-color: var(--color-primary);
+  }
+
+  .mobile-dock-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-dock-icon img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+  }
+
+  .mobile-dock-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .mobile-dock-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    white-space: nowrap;
+    color: var(--text-primary);
+  }
+
+  /* Ankaragücü Özel Mobil Dock Rozeti */
+  .mobile-dock-ag {
+    border-color: rgba(255, 204, 0, 0.4);
+    background: linear-gradient(135deg, rgba(0, 34, 76, 0.8), rgba(4, 15, 33, 0.9));
+    box-shadow: 0 0 12px rgba(255, 204, 0, 0.25);
+  }
+  .mobile-dock-ag .mobile-dock-label {
+    color: var(--color-primary);
+  }
+
+  /* 4. Masaüstü Yan Panellerini Mobilde Gizleme (Popup Olarak Açılacaklar) */
+  .dashboard-grid {
+    display: block;
+    width: 100%;
+  }
+
+  .dashboard-column.left-column,
+  .dashboard-column.right-column {
+    display: none; /* Mobilde kartlar gizlenir, popup olarak butonla açılır */
+  }
+
+  .dashboard-column.center-column {
+    width: 100%;
+  }
+
+  /* 5. Tek Sütun Akıcı Haber Akışı */
+  .news-feed-container {
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .feed-categories-bar {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .feed-categories-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-tab-btn {
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    flex-shrink: 0;
+  }
+
+  .feed-toolbar {
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .feed-search-box {
+    flex: 1;
+  }
+
+  .news-cards-grid {
+    grid-template-columns: 1fr; /* Mobilde tek sütun haber kartları */
+    gap: 12px;
+  }
+
+  .news-card {
+    padding: 12px;
+    border-radius: var(--radius-sm);
+  }
+
+  .news-card-img {
+    height: 160px;
+    border-radius: 8px;
+  }
+
+  .news-card-title {
+    font-size: 0.94rem;
+    line-height: 1.35;
+  }
+
+  /* 6. Mobil Bottom-Sheet Popuplar */
+  .mobile-sheet-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .mobile-sheet-backdrop.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .mobile-sheet-dialog {
+    width: 100%;
+    max-width: 540px;
+    max-height: 85vh;
+    background: var(--bg-modal);
+    border: 1px solid var(--border-card);
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.7);
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mobile-sheet-backdrop.active .mobile-sheet-dialog {
+    transform: translateY(0);
+  }
+
+  .mobile-sheet-handle {
+    width: 42px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    margin: 10px auto 4px;
+  }
+
+  .mobile-sheet-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 18px 12px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .mobile-sheet-title-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  .mobile-sheet-body {
+    padding: 16px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .mobile-sheet-footer {
+    padding: 10px 16px 16px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Mobil Okuma Modu / Reader View */
+  .modal-dialog {
+    width: 95%;
+    max-height: 90vh;
+  }
+}

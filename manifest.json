@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "KO|Apps - Açılış Sayfası",
+  "version": "1.0.0",
+  "description": "Brave için muhteşem tasarımlı, kategorize RSS haber akışı, Ankaragücü özel widget'ı, canlı piyasa, hava durumu, kısayollar ve çoklu arama motoru açılış sayfası.",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "action": {
+    "default_title": "KO|Apps - Açılış Sayfası"
+  },
+  "icons": {
+    "16": "icons/favicon.svg",
+    "48": "icons/favicon.svg",
+    "128": "icons/favicon.svg"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "KO|Apps - Açılış Sayfası",
+  "short_name": "KO|Apps",
+  "description": "Brave & Chromium için MKE Ankaragücü, Özelleştirilebilir RSS Haberleri, Canlı Borsa ve Hava Durumu Başlangıç Sayfası",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#040914",
+  "theme_color": "#040914",
+  "icons": [
+    {
+      "src": "icons/ankaragucu-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/ankaragucu-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
